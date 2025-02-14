@@ -27,10 +27,10 @@ with DAG(
 ) as dag:
     
     move_file_on_saturdays = DayOfWeekSensor(
-        task_id="move_file_on_thursdays",
+        task_id="move_file_on_fridays",
         timeout=3,
         soft_fail=True,
-        week_day=WeekDay.THURSDAY
+        week_day=WeekDay.FRIDAY
     )
     
     move_file_task = BashOperator(

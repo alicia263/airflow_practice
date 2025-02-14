@@ -36,6 +36,10 @@ x-airflow-common:
     - ./plugins:/opt/airflow/plugins
     - ./files_to_test:/opt/airflow/files_to_test
     - ./config/airflow.cfg:/usr/local/airflow/airflow.cfg
+    - ./dbt/jaffle_shop:/opt/airflow/dbt/jaffle_shop
+    - ./dbt/dbt-docs:/opt/airflow/dbt-docs
+    - ~/.ssh:/root/.ssh
+    - /var/run/docker.sock:/var/run/docker.sock
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
